@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkles_tutos_de_che_che=self.webpackChunkles_tutos_de_che_che||[]).push([[9700],{5688:e=>{e.exports=JSON.parse('{"label":"hola","permalink":"/blog/tags/hola","allTagsPath":"/blog/tags","count":1}')}}]);

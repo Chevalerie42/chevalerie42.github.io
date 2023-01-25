@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkles_tutos_de_che_che=self.webpackChunkles_tutos_de_che_che||[]).push([[4672],{4279:e=>{e.exports=JSON.parse('{"label":"Docker","permalink":"/docs/tags/docker","allTagsPath":"/docs/tags","count":1,"items":[{"id":"DevOps/Docker/index","title":"Docker","description":"Docker","permalink":"/docs/DevOps/Docker/Docker"}]}')}}]);

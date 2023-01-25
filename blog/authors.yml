@@ -1,17 +1,6 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
-
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
-
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+Chevalerie:
+  name: Chevalerie
+  title: SysAdmin - Créateur de contenu - Fondateur du site
+  url: https://github.com/Chevalerie42
+  image_url: /img/Page_Accueil/Logo_Chevalerie_Menu.png
+  email: chevalerie@keemail.me

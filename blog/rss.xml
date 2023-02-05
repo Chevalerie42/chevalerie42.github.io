@@ -12,10 +12,10 @@
         <item>
             <title><![CDATA[Mon second post de Blog !]]></title>
             <link>https://chevalerie42.github.io/blog/2023/01/05/2023-Janvier/Test2</link>
-            <guid>/2023/01/05/2023-Janvier/Test2</guid>
+            <guid>https://chevalerie42.github.io/blog/2023/01/05/2023-Janvier/Test2</guid>
             <pubDate>Thu, 05 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Mon second post de Blog !]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ceci-est-un-test">Ceci est un test<a class="hash-link" href="#ceci-est-un-test" title="Lien direct vers le titre">​</a></h2><p>Solomon Grundy,  </p><p>Né un lundi,<br>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ceci-est-un-test">Ceci est un test<a href="#ceci-est-un-test" class="hash-link" aria-label="Lien direct vers Ceci est un test" title="Lien direct vers Ceci est un test">​</a></h2><p>Solomon Grundy,  </p><p>Né un lundi,<br>
 <!-- -->Baptisé un mardi,<br>
 <!-- -->Marié un mercredi,<br>
 <!-- -->Malade un jeudi,<br>
@@ -30,10 +30,10 @@
         <item>
             <title><![CDATA[Mon premier post de Blog !]]></title>
             <link>https://chevalerie42.github.io/blog/2023/01/01/2023-Janvier/Test1</link>
-            <guid>/2023/01/01/2023-Janvier/Test1</guid>
+            <guid>https://chevalerie42.github.io/blog/2023/01/01/2023-Janvier/Test1</guid>
             <pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Mon premier post de Blog !]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ceci-est-un-test">Ceci est un test<a class="hash-link" href="#ceci-est-un-test" title="Lien direct vers le titre">​</a></h2><p>Solomon Grundy,  </p><p>Né un lundi,<br>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ceci-est-un-test">Ceci est un test<a href="#ceci-est-un-test" class="hash-link" aria-label="Lien direct vers Ceci est un test" title="Lien direct vers Ceci est un test">​</a></h2><p>Solomon Grundy,  </p><p>Né un lundi,<br>
 <!-- -->Baptisé un mardi,<br>
 <!-- -->Marié un mercredi,<br>
 <!-- -->Malade un jeudi,<br>

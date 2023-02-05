@@ -87,6 +87,33 @@ const config = {
   ],
   plugins: [
     [
+      "@docusaurus-terminology/parser",
+        {
+          termsDir: './glossaire',
+          glossaryFilepath: './glossaire/glossaire.md',
+        }
+    ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'glossaire',
+        path: 'glossaire',
+        routeBasePath: 'glossaire',
+        sidebarPath: require.resolve('./sidebars.js'),
+        // ... autres options
+        editUrl: 'https://github.com/chevalerie42/chevalerie42.github.io/edit/main/',
+        tagsBasePath: 'tags',
+        sidebarCollapsible: true,
+        sidebarCollapsed: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: true
+      },
+        ],
+
+
+    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'writeup',
@@ -103,7 +130,7 @@ const config = {
         breadcrumbs: true
       },
         ],
-        'plugin-image-zoom'
+        'plugin-image-zoom',
   ],
 
   themeConfig:

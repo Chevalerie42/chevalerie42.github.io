@@ -13,6 +13,6 @@ Le CMS, est l’acronyme de Content Management System, ou, en Français : systè
 facilement un site web de A à Z en ayant pas (ou peu) besoin de connaissances techniques en programmation. 
 WordPress est l'un des CMS les plus populaires, représentant près de 50% des sites web dans le monde, mais il existe également d'autres options telles que Drupal, Joomla, Hugo, et, évidemment Docusaurus.
 
-## Liste des tutos CMS : 
+## Liste des tutos : 
 
 [https://chevalerie42.github.io/docs/tags/cms](https://chevalerie42.github.io/docs/tags/cms)

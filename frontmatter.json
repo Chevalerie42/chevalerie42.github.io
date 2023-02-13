@@ -1,0 +1,81 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "docusaurus",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Les_Tutos_De_Cheche",
+      "path": "[[workspace]]"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "BlueTeam",
+    "CMS",
+    "Cloud",
+    "Couche 1",
+    "Dev",
+    "DevOps",
+    "Diagramme de Gantt",
+    "Docker",
+    "Docusaurus",
+    "Gestion de projet",
+    "Gestion_de_Projet",
+    "Introduction",
+    "MarkDown",
+    "OSI",
+    "Physique",
+    "PowerShell",
+    "Réseau",
+    "Système",
+    "Sécurité",
+    "TCP/IP",
+    "Windows"
+  ],
+  "frontMatter.taxonomy.categories": []
+}

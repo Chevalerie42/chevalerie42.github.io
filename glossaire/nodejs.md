@@ -1,6 +1,6 @@
 ---
-id: node.js
-title: node.js
+id: nodejs
+title: Node.js
 hoverText: Il s'agit d'un environnement d'exécution JavaScript open source et multiplateforme qui permet de construire des applications serveur en utilisant le langage JavaScript.
 ---
 

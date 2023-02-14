@@ -5,6 +5,7 @@ hoverText: CMS open source et gratuit permettant la génération de site statiqu
 ---
 
 ## Qu'est-ce donc ?
+
 Docusaurus est un CMS open source, gratuit, développé par la société Facebook.  
 
 Il est conçu afin de permettre la création rapide et facile de sites web de documentation semblable à GitBook.  

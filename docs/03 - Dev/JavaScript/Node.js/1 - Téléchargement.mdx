@@ -11,7 +11,7 @@ toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par
 title: 1 - Téléchargement & Installation # Titre du document
 keywords: [Intro, Tuto, Dev, Node.js, Nodejs, JavaScript] # Mots Clef
 description: Téléchargement & Installation de Node.js # La description du document
-image: https://chevalerie42.github.io/img/Page_Accueil/1-Téléchargement/OG_Image_Chapitre_1.jpg # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+image: https://chevalerie42.github.io/img/Dev/JavaScript/Node.js/1-Téléchargement/OG_Image_Chapitre_1.jpg # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
 preview: /img/Dev/JavaScript/Node.js/1-Téléchargement/OG_Image_Chapitre_1.jpg
 
 ### SideBar ###
@@ -23,21 +23,23 @@ pagination_next: null # Pagination page suivante. Soit "null" pour ne pas en ajo
 pagination_prev: Dev/JavaScript/Node.js/index # Pagination page precedent. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
 ---
 
+import Term from "@docusaurus-terminology/term";
+
 ## A – Windows 
 
-Windows est l'O.S le plus utilisé au monde, nous allons donc ouvrir notre tuto par celui-ci en premier 
+<Term popup="Windows est un système d'exploitation développé par Microsoft, qui est utilisé sur près de 75% des ordinateurs dans le monde." reference="/glossaire/windows">Windows</Term> est <Term popup="Un O.S, ou Système d'Exploitation, est le logiciel qui est installé sur un périphérique (ordinateur, téléphone, etc...) que l'utilisateur va manipuler au quotidien. Par exemple, nous pouvons citer Windows ou Android comme O.S très connus." reference="/glossaire/OS">l'O.S</Term> le plus utilisé au monde, nous allons donc ouvrir notre tuto par celui-ci en premier 
 
 ### 1 - Téléchargement 
 
-Le site officiel de Node.js [https://nodejs.org/fr/](https://nodejs.org/fr/) contient toutes les informations nécessaires, que ce soit sur la documentation ou le téléchargement.  
+Le site officiel de <Term popup="Il s'agit d'un environnement d'exécution JavaScript open source et multiplateforme qui permet de construire des applications serveur en utilisant le langage JavaScript" reference="/glossaire/nodejs">Node.js</Term> [https://nodejs.org/fr/](https://nodejs.org/fr/) contient toutes les informations nécessaires, que ce soit sur la documentation ou le téléchargement.  
 
-Évidemment, en informatique, il existe plusieurs systèmes d'exploitation, tels que Windows ou Linux. (En tant qu'informaticien, MAC n'est pas un O.S que j'affectionne 💩 💩 💩, donc je préfère ne pas en parler.) 
+Évidemment, en informatique, il existe plusieurs <Term popup="Un O.S, ou Système d'Exploitation, est le logiciel qui est installé sur un périphérique (ordinateur, téléphone, etc...) que l'utilisateur va manipuler au quotidien. Par exemple, nous pouvons citer Windows ou Android comme O.S très connus." reference="/glossaire/OS">systèmes d'exploitation</Term>, tels que <Term popup="Windows est un système d'exploitation développé par Microsoft, qui est utilisé sur près de 75% des ordinateurs dans le monde." reference="/glossaire/windows">Windows</Term> ou <Term popup="Linux est un système d'exploitation open-source créé en 1991 par Linus TORVALDS. Il est très populaire et utilisé dans le monde entier, en particulier pour les serveurs, ainsi que pour les smartphones sous Android" reference="/glossaire/linux">Linux</Term>. (En tant qu'informaticien, <Term popup="MAC est un O.S développé par la société Apple, fondée par Steve Jobs entre autre. C'est un dérivé de Linux, mais contrairement à ce dernier, il est propriétaire (code source est fermé aux modifications) et payant" reference="/glossaire/MAC">MAC</Term> n'est pas un <Term popup="Un O.S, ou Système d'Exploitation, est le logiciel qui est installé sur un périphérique (ordinateur, téléphone, etc...) que l'utilisateur va manipuler au quotidien. Par exemple, nous pouvons citer Windows ou Android comme O.S très connus." reference="/glossaire/OS">O.S</Term> que j'affectionne 💩 💩 💩, donc je préfère ne pas en parler.) 
 
 Le téléchargement peut être effectué à l'adresse suivante : [https://nodejs.org/fr/download/](https://nodejs.org/fr/download/)
 
 ![Sur le site officiel nous voyons la rubrique LTS puis Installateur Windows](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-1.jpg)
 
-Il suffit simplement de cliquer sur "Installateur Windows" en choisissant la version "LTS" (Long Time Support)
+Il suffit simplement de cliquer sur "Installateur Windows" en choisissant la version <Term popup="LTS signifie Long Time Support et cela désigne un produit qui bénéficie d'un cycle de vie plus long que la normale. La maintenance et les mises à jour seront effectuées sur une période prolongée (Passant de 2 à 5 ans par exemple)" reference="/glossaire/LTS">"LTS"</Term> (Long Time Support)
 
 ### 2 – Installation 
 
@@ -51,7 +53,7 @@ Ensuite, nous acceptons le contrat de licence (bien évidemment, nous avons pris
 
 ![Wizard avec case de lecture coché et un carré en surbrillance sur le NEXT](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-3.jpg)
 
-Pour ma part, je laisse le chemin d'installation par défaut, qui est "C:\Program Files\nodejs". Cependant, vous êtes libre de le personnaliser, mais soyez attentif au chemin d'accès (PATH).  
+Pour ma part, je laisse le chemin d'installation par défaut, qui est "C:\Program Files\nodejs". Cependant, vous êtes libre de le personnaliser, mais soyez attentif au chemin d'accès <Term popup="Pour faire simple, le PATH est une variable d'environnement qui contient un ou plusieurs raccourcis de chemin que l'OS parcourt pour exécuter son environnement. Par exemple, si j'exécute la commande 'ls', l'ordinateur va consulter tous les chemins définis dans la variable PATH pour trouver l'exécutable 'ls' et exécuter celui situé dans le chemin complet (/usr/bin/ls)" reference="/glossaire/PATH">(PATH)</Term>.  
 
 Ensuite, nous pouvons cliquer sur **"NEXT"**
 
@@ -85,32 +87,32 @@ Nous allons ensuite entrer la commande suivante :
 $node_version=node -v ; $npm_version=npm -v ; echo "NODE = $node_version `nNPM = $npm_version" 
 ```
 
-- **$node_version=node -v** : nous stockons la version de NodeJS dans la variable $node_version en exécutant la commande "node -v" 
+- **$node_version=node -v** : nous stockons la version de NodeJS dans la <Term popup="Une variable est un nom symbolique permettant de stocker des valeurs. C'est une notion très utilisée dans le développement informatique en raison de sa capacité à stocker et manipuler des données de manière flexible et efficace" reference="/glossaire/variable">variable</Term> $node_version en exécutant la commande "node -v" 
 - **;** : cela nous permet de séparer les commandes sur une seule ligne. 
-- **$npm_version=npm -v** : nous stockons la version de npm dans la variable $npm_version en exécutant la commande "npm -v". 
+- **$npm_version=npm -v** : nous stockons la version de <Term popup="NPM (Node Package Manager) est un gestionnaire de paquets pour le logiciel JavaScript" reference="/glossaire/NPM">NPM</Term> dans la <Term popup="Une variable est un nom symbolique permettant de stocker des valeurs. C'est une notion très utilisée dans le développement informatique en raison de sa capacité à stocker et manipuler des données de manière flexible et efficace" reference="/glossaire/variable">variable</Term> $npm_version en exécutant la commande "npm -v". 
 - **;** : Répétition … Cela permet d'ajouter des commandes dans une seule ligne 
-- **echo "NODE = $node_version nNPM = $npm_version"** : nous affichons les versions stockées dans les variables $node_version et $npm_version en utilisant la commande "echo". Le code `n est interprété comme un saut de ligne, ce qui nous permet d'afficher les deux versions sur deux lignes distinctes 
+- **echo "NODE = $node_version nNPM = $npm_version"** : nous affichons les versions stockées dans les <Term popup="Une variable est un nom symbolique permettant de stocker des valeurs. C'est une notion très utilisée dans le développement informatique en raison de sa capacité à stocker et manipuler des données de manière flexible et efficace" reference="/glossaire/variable">variables</Term> $node_version et $npm_version en utilisant la commande "echo". Le code "`n" est interprété comme un saut de ligne, ce qui nous permet d'afficher les deux versions sur deux lignes distinctes 
 
 ![Powershell avec la commande cité precedemment et le retour](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-10.jpg)
 
-Vous voilà fin prêt avec Nodejs !  
+Vous voilà fin prêt avec <Term popup="Il s'agit d'un environnement d'exécution JavaScript open source et multiplateforme qui permet de construire des applications serveur en utilisant le langage JavaScript" reference="/glossaire/nodejs">Nodejs</Term> !  
 
 ## B - Linux 
 
-Là ou sur Windows nous avions besoin de dégainer Firefox, google, télécharger un fichier,  explorateur de fichier, pour finir sur 7 Next tout ça pour qu'enfin nous ayons notre soft …  
+Là ou sur <Term popup="Windows est un système d'exploitation développé par Microsoft, qui est utilisé sur près de 75% des ordinateurs dans le monde." reference="/glossaire/windows">Windows</Term> nous avions besoin de dégainer Firefox, google, télécharger un fichier,  explorateur de fichier, pour finir sur 7 Next tout ça pour qu'enfin nous ayons notre soft …  
 
-Linux quant à lui fait les choses beaucoup plus simplement … Comme toujours ;) 
+<Term popup="Linux est un système d'exploitation open-source créé en 1991 par Linus TORVALDS. Il est très populaire et utilisé dans le monde entier, en particulier pour les serveurs, ainsi que pour les smartphones sous Android" reference="/glossaire/linux">Linux</Term> quant à lui fait les choses beaucoup plus simplement … Comme toujours ;) 
 
 ### 1 – Installation 
 
-Commençons par ouvrir un shell et exécuter la commande suivante :  
+Commençons par ouvrir un <Term popup="Un interpréteur de commandes, aussi appelé 'shell' en anglais, est un logiciel qui permet à l'utilisateur d'interagir avec le système d'exploitation en utilisant des lignes de commandes (CLI)" reference="/glossaire/shell">shell</Term> et exécuter la commande suivante :  
 
 ```bash
 sudo apt install nodejs npm  
 ```
 
-- **sudo** : permet d'exécuter la commande avec les privilèges de l'utilisateur "root" 
-- **apt** : Il s'agit du gestionnaire de paquets par défaut de Debian 
+- **sudo** : permet d'exécuter la commande avec les privilèges de l'utilisateur <Term popup="L'utilisateur 'root' est le compte par défaut sur les systèmes d'exploitation Unix avec les plus hauts privilèges. Il est l'équivalent de l'utilisateur 'administrateur' sur les systèmes Windows." reference="/glossaire/root">"root"</Term> 
+- **apt** : Il s'agit du gestionnaire de paquets par défaut de <Term popup="Linux est un système d'exploitation open-source créé en 1991 par Linus TORVALDS. Il est très populaire et utilisé dans le monde entier, en particulier pour les serveurs, ainsi que pour les smartphones sous Android" reference="/glossaire/linux">Debian</Term> 
 - **install** : c'est l'option d'installation de la commande "apt" 
 - **nodejs npm** : Enfin, nos deux logiciels  
 
@@ -118,7 +120,7 @@ sudo apt install nodejs npm
 
 ### 2 - Vérification 
 
-La commande suivante permet de vérifier les versions de Node et npm installées : 
+La commande suivante permet de vérifier les versions de Node et <Term popup="NPM (Node Package Manager) est un gestionnaire de paquets pour le logiciel JavaScript" reference="/glossaire/NPM">NPM</Term> installées : 
 
 ```bash
 node_version=$(node -v) ; npm_version=$(npm -v) ; echo "NODE = $node_version \nNPM = $npm_version" 
@@ -128,7 +130,7 @@ node_version=$(node -v) ; npm_version=$(npm -v) ; echo "NODE = $node_version \nN
 - **;** : permet de passer à une autre commande sur la même ligne. 
 - **npm_version=$(npm –v)** : Stocke la version de npm dans la variable "npm_version" en utilisant la commande "npm –v" 
 - **;** = Déjà dis, permet d'écrire plusieurs commande sur une seul ligne 
-- **echo "NODE = $node_version \nNPM = $npm_version"** = Affiche les versions de Node et npm en utilisant la commande "echo" en ajoutant les valeurs des variables "node_version" et "npm_version". Le "\n" représente un saut de ligne 
+- **echo "NODE = $node_version \nNPM = $npm_version"** = Affiche les versions de Node et <Term popup="NPM (Node Package Manager) est un gestionnaire de paquets pour le logiciel JavaScript" reference="/glossaire/NPM">NPM</Term> en utilisant la commande "echo" en ajoutant les valeurs des variables "node_version" et "npm_version". Le "\n" représente un saut de ligne 
 
 ![Terminal bash avec la comande et son résultat](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-12.jpg)
 

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcyber_xplorer=self.webpackChunkcyber_xplorer||[]).push([[7387],{8078:e=>{e.exports=JSON.parse('{"tag":{"label":"Docker","permalink":"/docs/tags/docker","allTagsPath":"/docs/tags","count":1,"items":[{"id":"DevOps/Docker/index","title":"Docker","description":"Docker","permalink":"/docs/DevOps/Docker/Docker"}],"unlisted":false}}')}}]);

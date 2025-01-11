@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkles_tutos_de_che_che=self.webpackChunkles_tutos_de_che_che||[]).push([[8132],{2806:s=>{s.exports=JSON.parse('{"label":"CMS","permalink":"/docs/tags/cms","allTagsPath":"/docs/tags","count":1,"items":[{"id":"Cloud/Docusaurus/index","title":"Docusaurus","description":"Docusaurus","permalink":"/docs/Cloud/Docusaurus/"}]}')}}]);

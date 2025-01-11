@@ -1,0 +1,33 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+
+
+
+
+
+.navbar-icon {
+  border-radius: 50%;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  padding: 0;
+  transition: background var(--ifm-transition-fast);
+}
+
+.navbar-icon:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: inherit;
+}

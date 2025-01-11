@@ -1,0 +1,126 @@
+---
+### FIL d'Ariane ###
+toc_min_heading_level: 2 # Fil d'Ariane, affiche dés le niveau de titre 2. Par Défaut : 2
+toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par défaut : 3
+### MetaData ###
+title: Node.js - 1 - Téléchargement & Installation # Titre du document
+keywords: [Intro, Tuto, Dev, Node.js, Nodejs, JavaScript]  # Mots Clef
+description: Téléchargement & Installation de Node.js # La description du document
+image: https://chevalerie42.github.io/img/Dev/JavaScript/Node.js/1-Téléchargement/OG_Image_Chapitre_1.jpg# Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+preview: /img/Dev/JavaScript/Node.js/1-Téléchargement/OG_Image_Chapitre_1.jpg
+tags: [Intro, Tuto, Dev, JavaScript, Node.js] # Tags le fichier et permet de grouper par mots clef
+authors: Chevalerie # Equivalent au fichier author.yml
+---
+
+## A – Windows 
+
+Windows est l'O.S le plus utilisé au monde, nous allons donc ouvrir notre tuto par celui-ci en premier 
+
+### 1 - Téléchargement 
+
+Le site officiel de Node.js [https://nodejs.org/fr/](https://nodejs.org/fr/) contient toutes les informations nécessaires, que ce soit sur la documentation ou le téléchargement.  
+
+Évidemment, en informatique, il existe plusieurs systèmes d'exploitation, tels que Windows ou Linux. (En tant qu'informaticien, MAC n'est pas un O.S que j'affectionne 💩 💩 💩, donc je préfère ne pas en parler.) 
+
+Le téléchargement peut être effectué à l'adresse suivante : [https://nodejs.org/fr/download/](https://nodejs.org/fr/download/)
+<!--truncate-->
+![Sur le site officiel nous voyons la rubrique LTS puis Installateur Windows](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-1.jpg)
+
+Il suffit simplement de cliquer sur "Installateur Windows" en choisissant la version "LTS" (Long Time Support)
+
+### 2 – Installation 
+
+Une fois que l'exécutable est téléchargé, il n'y a aucun secret, il suffit de le lancer et de suivre les étapes habituelles de l'assistant d'installation : 
+
+Tout d'abord, nous cliquons sur **"Next"** pour démarrer le process' 
+
+![Wizard de base avec la seul option de NEXT](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-2.jpg)
+
+Ensuite, nous acceptons le contrat de licence (bien évidemment, nous avons pris le temps de le lire 😉) avant de cliquer sur **"NEXT"**. 
+
+![Wizard avec case de lecture coché et un carré en surbrillance sur le NEXT](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-3.jpg)
+
+Pour ma part, je laisse le chemin d'installation par défaut, qui est "C:\Program Files\nodejs". Cependant, vous êtes libre de le personnaliser, mais soyez attentif au chemin d'accès (PATH).  
+
+Ensuite, nous pouvons cliquer sur **"NEXT"**
+
+![Wizard demandant le chemin d'installation du soft](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-4.jpg)
+
+Je laisse les options par défaut, car les options de base me conviennent parfaitement. Il suffit de cliquer sur **"Next"**
+
+![Wizard proposant de customiser le setup](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-5.jpg)
+
+Plusieurs outils sont proposés lors de l'installation automatique, tels que Chocolatey. Personnellement, je ne le souhaite pas, donc je ne coche aucune case. Bref ... encore un clic sur **"Next"**
+
+![Wizard proposant de'installer des tools supplémentaires](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-6.jpg)
+
+Nous arrivons enfin à la fenêtre d'installation, qui se lance en cliquant sur le bouton **"Install"**
+
+![Wizard termine en proposant seulement l'option install](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-7.jpg)
+
+Une fois l'installation terminée avec succès, le bouton **"Finish"** est disponible pour fermer l'assistant. 
+
+![Wizard termine avec l'option Finish](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-8.jpg)
+
+### 3 - Vérification 
+
+Afin de vérifier que tout roule et que nous avons tous nos outils dans la bonne version, nous allons utiliser le raccourci clavier _`"Windows + R"`_ pour ouvrir une fenêtre _"Exécuter"_ et entrer _`"PowerShell"`_, puis cliquer sur **"OK"**. 
+
+![Fenêtre executer avec PowerShell ecrit dedans](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-9.jpg)
+
+Nous allons ensuite entrer la commande suivante : 
+
+```powershell
+$node_version=node -v ; $npm_version=npm -v ; echo "NODE = $node_version `nNPM = $npm_version" 
+```
+
+- **$node_version=node -v** : nous stockons la version de NodeJS dans la variable $node_version en exécutant la commande "node -v" 
+- **;** : cela nous permet de séparer les commandes sur une seule ligne. 
+- **$npm_version=npm -v** : nous stockons la version de npm dans la variable $npm_version en exécutant la commande "npm -v". 
+- **;** : Répétition … Cela permet d'ajouter des commandes dans une seule ligne 
+- **echo "NODE = $node_version nNPM = $npm_version"** : nous affichons les versions stockées dans les variables $node_version et $npm_version en utilisant la commande "echo". Le code `n est interprété comme un saut de ligne, ce qui nous permet d'afficher les deux versions sur deux lignes distinctes 
+
+![Powershell avec la commande cité precedemment et le retour](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-10.jpg)
+
+Vous voilà fin prêt avec Nodejs !  
+
+## B - Linux 
+
+Là ou sur Windows nous avions besoin de dégainer Firefox, google, télécharger un fichier,  explorateur de fichier, pour finir sur 7 Next tout ça pour qu'enfin nous ayons notre soft …  
+
+Linux quant à lui fait les choses beaucoup plus simplement … Comme toujours ;) 
+
+### 1 – Installation 
+
+Commençons par ouvrir un shell et exécuter la commande suivante :  
+
+```bash
+sudo apt install nodejs npm  
+```
+
+- **sudo** : permet d'exécuter la commande avec les privilèges de l'utilisateur "root" 
+- **apt** : Il s'agit du gestionnaire de paquets par défaut de Debian 
+- **install** : c'est l'option d'installation de la commande "apt" 
+- **nodejs npm** : Enfin, nos deux logiciels  
+
+![Terminal bash avec la comande et son résultat](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-11.jpg)
+
+### 2 - Vérification 
+
+La commande suivante permet de vérifier les versions de Node et npm installées : 
+
+```bash
+node_version=$(node -v) ; npm_version=$(npm -v) ; echo "NODE = $node_version \nNPM = $npm_version" 
+```
+
+- **node_version=$(node -v)** : Stocke la version de Node dans la variable "node_version" en utilisant la commande "node -v" 
+- **;** : permet de passer à une autre commande sur la même ligne. 
+- **npm_version=$(npm –v)** : Stocke la version de npm dans la variable "npm_version" en utilisant la commande "npm –v" 
+- **;** = Déjà dis, permet d'écrire plusieurs commande sur une seul ligne 
+- **echo "NODE = $node_version \nNPM = $npm_version"** = Affiche les versions de Node et npm en utilisant la commande "echo" en ajoutant les valeurs des variables "node_version" et "npm_version". Le "\n" représente un saut de ligne 
+
+![Terminal bash avec la comande et son résultat](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-12.jpg)
+
+Eh bien, que dire de plus ? 
+
+![Meme Wow d'un orc qui dit Travail Terminé](/img/Dev/JavaScript/Node.js/1-Téléchargement/Screen-13.jpg)

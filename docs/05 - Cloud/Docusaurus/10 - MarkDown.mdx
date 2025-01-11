@@ -1,0 +1,655 @@
+---
+### Paramétrage de la page ###
+tags: [Cloud, Docusaurus, MarkDown]
+
+### FIL d'Ariane ###
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+
+### MetaData ###
+title: 10 - MarkDown Cheat Sheet
+keywords: [Intro, Tuto, Cloud, Internet, Site, WEB, Cheat Sheet, Cheat-Sheet, Docusaurus, CMS, Open source, Open-Source, OpenSource, Free, Gratuit, FaceBook, Documentation, Chevalerie, MarkDown, md, mdx]
+description: MarkDown Cheat Sheet pour Docusaurus
+image: https://chevalerie42.github.io/img/docusaurus.png
+
+### SideBar ###
+sidebar_label: 10 - MarkDown
+
+### Pagination ###
+pagination_label: 1 - Prérequis
+pagination_prev: Cloud/Docusaurus/index
+preview: /img/logo.svg
+pagination_next: null
+---
+
+import TOCInline from '@theme/TOCInline';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Afficher une table des matières 
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+<TOCInline 
+toc={toc.filter((node) => node.level === 2 || node.level === 3 || node.level === 4 || node.level === 5 || node.level === 6)} 
+minHeadingLevel={3} 
+maxHeadingLevel={4} 
+/>
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline 
+toc={toc.filter((node) => node.level === 2 || node.level === 3 || node.level === 4 || node.level === 5 || node.level === 6)} 
+minHeadingLevel={3} // Affiche les entêtes a partir de h3
+maxHeadingLevel={4} // Affiche les entêtes jusqu'a h4
+/>
+```
+
+</TabItem>
+</Tabs>
+
+## Titres
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+## Titre Niveau 2
+### Titre Niveau 3
+#### Titre Niveau 4
+##### Titre Niveau 5
+###### Titre Niveau 6
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+## Titre Niveau 2
+### Titre Niveau 3
+#### Titre Niveau 4
+##### Titre Niveau 5
+###### Titre Niveau 6
+```
+
+</TabItem>
+</Tabs>
+
+## Gras / Italique / Souligné / Barré 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+Mots en **GRAS**  
+Mots en _Italique_  
+Mots <ins>Souligné</ins>  
+Mots ~~Barré~~  
+Mots en <ins>**_~~GRAS / ITLATIQUE / Souligné / Barré~~_**</ins>  
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+Mots en **GRAS**  
+Mots en _Italique_  
+Mots <ins>Souligné</ins>  
+Mots ~~Barré~~  
+Mots en <ins>**_~~GRAS / ITLATIQUE / Souligné / Barré~~_**</ins>  
+```
+
+</TabItem>
+</Tabs>
+
+## Surligné / Couleur
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+Mots `Encadré`  
+Mots <mark>Surligné</mark>  
+Mots <span style={{backgroundColor: 'green'}}>Surligné VERT</span><br />  
+Mots en <span style={{color: 'green'}}>VERT</span>
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+Mots `Encadré`  
+Mots <mark>Surligné</mark>
+Mots <span style={{backgroundColor: 'green'}}>Surligné VERT</span><br />  
+Mots en <span style={{color: 'green'}}>VERT</span>
+```
+
+</TabItem>
+</Tabs>
+
+
+
+
+## Image
+
+<details>
+  <summary>
+    <strong>
+      Image sans lien
+    </strong> 
+  </summary>
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+![DESCRIPTION](/img/Page_Accueil/Logo_Chevalerie.png 'NOM')
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+![DESCRIPTION](/img/Page_Accueil/Logo_Chevalerie.png 'NOM')
+```
+
+</TabItem>
+</Tabs>
+</details>
+
+<details>
+  <summary>
+    <strong>
+      Image Avec lien
+    </strong> 
+  </summary>
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+[![Logo de Chevalerie avec lien sur cette page](/img/Page_Accueil/Logo_Chevalerie.png 'Logo de Chevalerie')](https://chevalerie42.github.io/docs/Cloud/Docusaurus/MarkDown)
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+[![DESCRIPTION](/img/Page_Accueil/Logo_Chevalerie.png 'NOM')](https://chevalerie42.github.io/docs/Cloud/Docusaurus/MarkDown)
+```
+
+</TabItem>
+</Tabs></details>
+
+## Liens
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'}
+  ]}>
+
+<TabItem value="Resultat">
+
+[Vers une URL](https://chevalerie42.github.io)  
+[Vers un FICHIER](/img/Page_Accueil/Logo_Chevalerie.png)  
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+[Vers une URL](https://chevalerie42.github.io)
+[Vers un FICHIER](/img/Page_Accueil/Logo_Chevalerie.png)  
+<https://chevalerie42.github.io>
+```
+
+</TabItem>
+</Tabs>
+
+## Citation
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+> Citation 1  
+
+> Citation 2  
+> Citation 2
+>> Citation 2 
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+> Citation 1  
+
+> Citation 2  
+> Citation 2
+>> Citation 2 
+```
+
+</TabItem>
+</Tabs>
+<br />
+
+## Bloc de codes
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+```bash title="/tmp/script.sh"
+VARIABLE=$(whoami)
+echo $VARIABLE > /tmp/test.txt
+``` 
+
+</TabItem>
+<TabItem value="Code">
+
+````markdown
+```bash title="/tmp/script.sh"
+VARIABLE=$(whoami)
+echo $VARIABLE > /tmp/test.txt 
+```
+````
+
+</TabItem>
+</Tabs>
+
+## Liste 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+- Liste : 1
+  - Liste : 2
+    - Liste : 3   
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+- Liste : 1
+  - Liste : 2
+    - Liste : 3   
+```
+
+</TabItem>
+</Tabs>
+
+## Saut de section 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+--- 
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+---
+```
+
+</TabItem>
+</Tabs>
+
+## Admonitions
+
+
+<Tabs
+  defaultValue="remarque"
+  values={[
+    {label: 'Remarque', value: 'remarque'},
+    {label: 'Tip', value: 'tip'},
+    {label: 'Info', value: 'info'},
+    {label: 'Caution', value: 'caution'},
+    {label: 'Danger', value: 'danger'},
+  ]}>
+
+  <TabItem value="remarque">
+
+:::note remarque
+Ceci est une remarque - Blanche
+:::
+
+```md
+:::note remarque
+Ceci est une remarque - Blanche
+:::
+```
+
+</TabItem>
+  <TabItem value="tip">
+
+:::tip
+Ceci est une astuce (tip) - Verte
+:::
+
+```md
+:::tip
+Ceci est une astuce (tip) - Verte
+:::
+```
+
+</TabItem>
+  <TabItem value="info">
+
+:::info
+Ceci est une info - Bleu
+:::
+
+```md
+:::info
+Ceci est une info - Bleu
+:::
+```
+
+</TabItem>
+  <TabItem value="caution">
+
+:::caution
+Ceci est Attention (Caution) - Jaune
+:::
+
+```md
+:::caution
+Ceci est Attention (Caution) - Jaune
+:::
+```
+
+</TabItem>
+  <TabItem value="danger">
+
+:::danger
+Ceci est danger - Rouge
+:::
+
+```md
+:::danger
+Ceci est danger - Rouge
+:::
+```
+
+</TabItem>
+</Tabs>
+
+## Onglet
+
+<Tabs
+  defaultValue="apple"
+  values={[
+    {label: 'Apple', value: 'apple'},
+    {label: 'Orange', value: 'orange'},
+  ]}>
+  <TabItem value="apple">Ceci est une pomme 🍎</TabItem>
+  <TabItem value="orange">Ceci est une orange 🍊</TabItem>
+</Tabs>
+
+``` md
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+<Tabs
+  defaultValue="apple"
+  values={[
+    {label: 'Apple', value: 'apple'},
+    {label: 'Orange', value: 'orange'},
+  ]}>
+  <TabItem value="apple">Ceci est une pomme 🍎</TabItem>
+  <TabItem value="orange">Ceci est une orange 🍊</TabItem>
+</Tabs>
+```
+
+## Menu Déroulant
+<details>
+  <summary>Basculez moi !</summary>
+  <div>
+    <div>Voici le contenu détaillé</div>
+    <br/>
+    <details>
+      <summary>
+        Interrupteur imbriqué ! Quelques surprises à l'intérieur...
+      </summary>
+      <div>
+        😲😲😲😲😲
+      </div>
+    </details>
+  </div>
+</details>
+
+```html 
+<details>
+  <summary>Basculez moi !</summary>
+  <div>
+    <div>Voici le contenu détaillé</div>
+    <br/>
+    <details>
+      <summary>
+        Interrupteur imbriqué ! Quelques surprises à l'intérieur...
+      </summary>
+      <div>
+        😲😲😲😲😲
+      </div>
+    </details>
+  </div>
+</details>
+```
+
+## Vidéo 
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+<iframe 
+  alt="Vidéo de présentation sur ma chaine youtube"
+  width="700" 
+  height="400" 
+  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+  title="YouTube présentation" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+<iframe 
+  alt="Vidéo de présentation sur ma chaine youtube"
+  width="700" 
+  height="400" 
+  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+  title="YouTube présentation" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+```
+
+</TabItem>
+</Tabs>
+
+## Tableau
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+|  Colonne1  |  Colonne2  |  Colonne3  |
+| :--------: | :--------: | :--------: |
+|   Entrée1  |   Entrée2  |   Entrée3  |
+|   Entrée4  |   Entrée5  |   Entrée6  | 
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+|  Colonne1  |  Colonne2  |  Colonne3  |
+| :--------: | :--------: | :--------: |
+|   Entrée1  |   Entrée2  |   Entrée3  |
+|   Entrée4  |   Entrée5  |   Entrée6  |
+```
+
+</TabItem>
+</Tabs>
+
+## Check Liste
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+ - [x] Mission 1
+ - [ ] Mission 2
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+ - [x] Mission 1
+ - [ ] Mission 2
+```
+
+</TabItem>
+</Tabs>
+
+
+## Définition
+
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+<p><dfn><abbr title="Texte de la définition">Définition</abbr></dfn> Laisser la souris sur le texte</p>
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+<p><dfn><abbr title="Texte de la définition">Définition</abbr></dfn> Laisser la souris sur le texte</p>
+```
+
+</TabItem>
+</Tabs>
+
+
+## Footnotes & references
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Resultat"
+  values={[
+    {label: 'Resultat', value: 'Resultat'},
+    {label: 'Code', value: 'Code'},
+  ]}>
+
+<TabItem value="Resultat">
+
+Texte avec 1ere reference[^1]. Et Ici la seconde[^2].
+
+[^1]: Nous avons donc notre 1er footnote
+[^2]: Ici nous avons notre deuxiéme footnote
+
+    Un Saut de Ligne + 2 Tabulation permettent d'ajouter du texte comme cela 
+
+</TabItem>
+<TabItem value="Code">
+
+```markdown
+Texte avec 1ere reference[^1]. Et Ici la seconde[^2].
+
+[^1]: Nous avons donc notre 1er footnote
+[^2]: Ici nous avons notre deuxiéme footnote
+
+    Un Saut de Ligne + 2 Tabulation permettent d'ajouter du texte comme cela
+```
+
+</TabItem>
+</Tabs>
+
+

@@ -61,8 +61,8 @@ const config = {
           tagsBasePath: 'tags',
           sidebarCollapsible: true,
           sidebarCollapsed: true,
-          showLastUpdateAuthor: false,
-          showLastUpdateTime: false,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           breadcrumbs: true,
         },
 
@@ -147,8 +147,8 @@ const config = {
         tagsBasePath: 'tags',
         sidebarCollapsible: true,
         sidebarCollapsed: true,
-        showLastUpdateAuthor: false,
-        showLastUpdateTime: false,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
         breadcrumbs: true
       },
         ],
@@ -164,8 +164,8 @@ const config = {
         tagsBasePath: 'tags',
         sidebarCollapsible: true,
         sidebarCollapsed: true,
-        showLastUpdateAuthor: false,
-        showLastUpdateTime: false,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
         breadcrumbs: true
       },
         ],

@@ -169,6 +169,9 @@ const config = {
         breadcrumbs: true
       },
         ],
+
+        
+          require.resolve('docusaurus-plugin-image-zoom'),
   ],
 
   themeConfig:
@@ -419,7 +422,8 @@ const config = {
       prism: {
         theme: prismThemes.shadesOfPurple,
         darkTheme: prismThemes.shadesOfPurple,
-      ///  additionalLanguages: ['powershell','apacheconf','arduino','asciidoc','aspnet','awk','bash','batch','brainfuck','clike','cmake','csharp','css','csv','cypher','django','dns-zone-file','docker','editorconfig','gcode','git','graphql','http','java'],
+      //  defaultLanguage: 'bash',
+        additionalLanguages: ['markup','php','powershell','bash','apacheconf','asciidoc','awk','batch','css','csv','docker','editorconfig','git','http','java','javascript','c','csharp','cpp','cmake','ini','json','log','mermaid','mongodb','python','jsx','tsx','regex','ruby','rust','splunk-spl','sql','vim','yaml'],
       },
 
       colorMode: {
@@ -489,7 +493,18 @@ const config = {
         hideable: true,
         autoCollapseCategories: true,
                },
-            }
+            },
+
+            zoom: {
+              selector: '.markdown :not(em) > img',
+              config: {
+                // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+                background: {
+                  light: 'rgb(255, 255, 255)',
+                  dark: 'rgb(50, 50, 50)'
+                }
+              }
+            },
 
     }),
 };

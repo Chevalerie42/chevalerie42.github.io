@@ -1,0 +1,96 @@
+---
+### Paramétrage de la page ###
+slug: INTRO_Concevoir_un_reseau # le lien ici : https://XXXXX/docs/Intro_Tuto_de_Cheche
+tags: [Introduction, Réseau] # Tags le fichier et permet de grouper par mots clef
+
+### FIL d'Ariane ###
+toc_min_heading_level: 2 # Fil d'Ariane, affiche dés le niveau de titre 2. Par Défaut : 2
+toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par défaut : 3
+
+### MetaData ###
+title: Concevoir un reseau # Titre du document
+keywords: [Tuto, Reseau, TCP/IP, LAN, WAN, Chevalerie, Concevoir un reseau, Conception, réseau, infra, infrastructure] # Mots Clef
+description: INTRO à la conception d'un réseau # La description du document
+image: https://chevalerie42.github.io/img/Page_Accueil/Photo_Réseau.jpg # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+
+### SideBar ###
+sidebar_label: Concevoir un réseau # Texte affiché sur la SideBar. Par défaut ce sera le "title"
+
+### Pagination ###
+pagination_label: Concevoir un réseau # Texte utilisé sur les boutons Suivant/Précédent. Par defaut "Title"
+pagination_next: Réseau/Concevoir un reseau/Theorie_conception_reseau  # Pagination page suivante. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+pagination_prev: Réseau/index # Pagination page precedent. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+---
+Nous avons vu ce qu’est un réseau informatique <br/>
+Si vos souvenirs ne vont pas aussi loin retour ici : https://chevalerie42.github.io/docs/Réseau/Intro_Reseau
+
+Dans la majorité des entreprises, le réseau existe déjà. Il nous incombe alors d'assurer :
+- La maintenance 
+- Le dépannage
+- L'évolution 
+Cependant, tel un bébé humain, avant que le réseau ne vive, il y a sa conception.<br/>
+Pas sûr cependant que concevoir un réseau soit aussi amusant qu'un bébé humain, mais bon
+
+Dans ce tuto on se concentre donc précisément sur cette phase : comment concevoir un réseau informatique<br/>
+Il est fondamental de comprendre un principe clé :
+> Il n’existe pas de réseau standard universel
+
+Chaque réseau dépend :
+- De l’activité de l’entreprise
+- Du nombre d’utilisateurs
+- Des contraintes métiers
+- Du budget
+- Des choix du concepteur
+
+Deux réseaux peuvent se ressembler, mais aucun n’est réellement identique<br/>
+Et d'expérience, c'est même une erreur, qui a de grosses repercusion au final (surtout sur la sécurité) que de vouloir le "templatiser"<br/>
+C’est pourquoi la conception réseau repose sur une méthodologie, et non sur un modèle à copier
+
+```mermaid
+---
+config:
+  layout: elk
+  theme: neo
+  look: neo
+---
+flowchart TB
+ subgraph s2["SERVICE INFORMATIQUE"]
+        nl("Gilles PARBAL<br>-<br>Reponsable Service Informatique")
+        n9(["Barack AFRITTE<br>-<br>Administrateur Systéme et Réseaux"])
+  end
+ subgraph s3["SERVICE SUPPORT"]
+        ng("Sheila ZIZANIE<br>-<br>Responsale Service Support")
+        np(["Marie AGE<br>-<br>Chargée de Communication"])
+        n10(["Norma LEMAN<br>-<br>Responsale Recrutement"])
+  end
+ subgraph s4["SERVICE PRODUCTION"]
+        n6("Geoffroy DANLEDO<br>-<br>Reponsable service Production")
+        n7(["Pierre KIROUL<br>-<br>Electricien"])
+        n11(["René DESCENDRE<br>-<br>Electricien"])
+        n12(["Régis SOEURDESIMPOTS<br>-<br>Electricien"])
+  end
+ subgraph s5["DIRECTION"]
+        A{{"Alain CONNU<br>-<br>CEO"}}
+        n8("Ella LAPECHE<br>-<br>Directrice Administratif et Financiere")
+  end
+    A --> n8 & nl & n6 & ng
+    nl --> n9
+    n6 --> n7 & n11 & n12
+    ng --> np & n10
+
+    style nl stroke:#000000,fill:#00C853,color:#000000
+    style n9 stroke:#000000,fill:#C8E6C9,color:#000000
+    style ng stroke:#000000,fill:#F19A7B,color:#000000
+    style np stroke:#000000,fill:#FFCDD2,color:#000000
+    style n10 stroke:#000000,fill:#FFCDD2,color:#000000
+    style n6 stroke:#000000,fill:#FFD600,color:#000000
+    style n7 stroke:#000000,fill:#FFF9C4,color:#000000
+    style n11 stroke:#000000,fill:#FFF9C4,color:#000000
+    style n12 stroke:#000000,fill:#FFF9C4,color:#000000
+    style A stroke:#000000,fill:#69C3D7,color:#000000
+    style n8 stroke:#000000,fill:#BBDEFB,color:#000000
+    style s5 stroke:#E1BEE7
+    ```
+
+
+

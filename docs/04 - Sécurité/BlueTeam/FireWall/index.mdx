@@ -1,0 +1,196 @@
+---
+### Paramétrage de la page ###
+slug: FireWall # le lien ici : https://XXXXX/docs/Intro_Tuto_de_Cheche
+tags: [Introduction, Sécurité, BlueTeam, FireWall] # Tags le fichier et permet de grouper par mots clef
+
+### FIL d'Ariane ###
+toc_min_heading_level: 2 # Fil d'Ariane, affiche dés le niveau de titre 2. Par Défaut : 2
+toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par défaut : 3
+
+### MetaData ###
+title: FireWall # Titre du document
+keywords: [Intro, Sécurité, BlueTeam, FireWall] # Mots Clef
+description: FireWall # La description du document
+image: https://chevalerie42.github.io/img/Sécurité/BlueTeam/FireWall/FireWall-Logo.png # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+
+### SideBar ###
+sidebar_label: FireWall # Texte affiché sur la SideBar. Par défaut ce sera le "title"
+
+### Pagination ###
+pagination_label: FireWall # Texte utilisé sur les boutons Suivant/Précédent. Par defaut "Title"
+pagination_next: null  # Pagination page suivante. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+pagination_prev: Sécurité/BlueTeam/index # Pagination page precedent. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+---
+
+![Image Jolie FireWall](/img/Sécurité/BlueTeam/FireWall/FireWall-Logo.png 'FireWall')
+
+## 1 - Introduction 
+
+Un <ins>**Firewall**</ins> (ou Pare-Feu, en bon franchouillard) est un gros **vigile** de la cyber. Selon un ensemble de règles bien définies, il choisira, si une **connexion** peut entrer ou si elle doit repartir fissa. 
+
+Dans un schéma réseau, le FireWall est représenté classiquement par ce logo : ![Logo FireWall](/img/Sécurité/BlueTeam/FireWall/Logo-FireWall2.png 'Logo FireWall')
+
+:::tip
+Bref, il s'agit de la porte d'entrée de ton réseau
+:::
+
+## 2 - Fonctionnement
+
+Dans toute **communication** réseau, il y a une **connexion** entre deux entités.
+Le Firewall, c'est le vigile de cette connexion
+Avant que ton PC puisse discuter avec un serveur, le Firewall se charge de filtrer la demande :
+
+"Toi, tu peux passer, et toi, tu vas rester dehors."
+
+Imagine un vigile devant une boîte de nuit, avec une liste des **"règles"** à appliquer :
+- Costard-cravate ? Ok, entre, la soirée est à toi !
+- Survêt’, casquette, baskets ? Non merci, tu dégages !
+
+Le firewall, c’est pareil : il regarde ce qui arrive ou sort et décide si ça passe ou non
+
+![Diagramme Fonctionnement Général d'un Firewall](/img/Sécurité/BlueTeam/FireWall/Diagramme_Fonctionnement_General_FW.png 'Diagramme_Fonctionnement_General_FW')
+
+
+## 3 - Les régles
+
+Un Firewall s’appuie sur une liste d'élément pour décider si une connexion doit passer ou non :
+- **Le port physique** : C’est la carte ethernet sur laquelle la connexion passe
+- **L'adresse source** : De quel IP vient la connexion ?
+- **Le port source** : Par quel port réseau la connexion sort-elle ?
+- **L'adresse distante** : Sur quel IP la connexion souhaite aller ?
+- **Le port distant** : Sur quel port distant la connexion essaie-t-elle de se poser ?
+En fonction de ces critères, le firewall prend la décision de laisser ou non la connexion s'établir
+
+|Interface|IP Source|Port|IP Destination|Port Destionation|Action|
+| :---:   | :---:   | :---: | :---: | :---:              | :---: |
+
+## 4 - Actions :
+
+Une fois qu’il a scruté toutes les infos, le Firewall va choisir une des trois actions suivantes :
+- **Autoriser** : L’entrée est libre, la connexion peut se faire : ✅
+- **Bloquer** : La connexion est ignorée sans prévention. Ça fait un peu "je t'ai vu dans la file ... Mais je m'en fou, tu rentre pas". En soit, l'emetteur n'a pas l'information qu'il a été refusé. Ce dernier ne recevra pas l'échec de sa tentative. Il peut interpréter ca comme une connexion réseau défaillante ❌
+- **Rejeter** : Le firewall est plus direct. "C'est gentil mais non merci, rentre chez ta mére !" 🦵💥🦶👊
+
+### A - Exemple de régle
+
+Prenons un _<ins>exemple</ins>_ :
+- Mon LAN est branché sur le port "INT_LAN" de mon FW
+- Mon ordinateur posséde l'IP : 192.168.1.66
+- J'ouvre une connexion sur un port aléatoire (_voir fonctionnement TCP/IP_) : 45678
+- Je veux joindre le site web https://chevalerie42.github.io/ (Ici : 185.199.110.153)
+- Et ceux sur son service https : 443
+- Je souhaite quel soit autorisé
+
+La régle est donc :
+
+|Interface|IP Source|Port|IP Destination|Port Destionation|Action|
+| :---:   | :---:   | :---: | :---: | :---:              | :---: |
+|INT_LAN|192.168.1.6|ANY|185.199.110.153|443|Autorisé|
+
+## 5 - Les états
+Bien que dans ma carriére, je n'en ai guère rencontré, il est important de le savoir. Des FireWalls, il y en a deux types, et certains sont un peu plus old school que d'autres.
+
+### A - StateLess
+Les firewalls **stateless** ("Sans états"), c’est un peu l’ancienne école, le papi du firewall. 👴🏻👵
+
+Chaque paquet qui passe par le firewall est traité sans tenir compte de ce qui s’est passé avant. 
+En gros, chaque demande est comme une nouvelle question : "Puis-je entrer ?"
+
+Ce qui fait que nous devons paramétrer "l'aller-retour" :
+- Si j'autorise mon ordinateur a aller sur mon site web
+- Je n'ai pas autoriser le site web a répondre a mon site web : Je dois donc paramétrer 2 régles :
+
+|Interface|IP Source|Port|IP Destination|Port Destionation|Action|
+| :---:   | :---:   | :---: | :---: | :---:| :---: |
+|INT_LAN|192.168.1.6|ANY|185.199.110.153|443|Autorisé|
+|INT_WAN|85.199.110.153|443|192.168.1.6|ANY|Autorisé|
+
+### B - StateFull
+Les firewalls **statefull** ("Avec état"), eux, ont une mémoire ! 
+Une fois qu'ils ont vérifié une connexion et que tout est ok, 
+ils ne revérifient pas tout le temps chaque paquet.
+> C'est un gain en terme de rapidité et en terme de gestion
+
+Une fois que ta connexion est validé, le port de connexion est enregistré, et à chaque fois qu'elle passe, le firewall ne regarde pas sa régle mais se souviens qu'elle été validé et laisser passer
+
+## 6 - Types de FireWall
+
+Les firewalls peuvent être soit **physiques** (des "boitiers" avec des ports Ethernet), soit **logiciels** (comme celui nativement intégéré dans un PC Windobe). 
+
+- **FireWall physique** : Comme il s'agit d'un **boitier**, on le place dans la salle serveur, généralement branché directement sur la connexion internet puis sur le switch. Toute les "enveloppes" transitent physiquement par lui 
+- **Firewalls logiciels** : Nativement sur les équipements (notamment sur ton Windobe) il y a un firewall interne de type **logiciel** qui permet notamment de pouvoir filtrer physiquement ce qui transitent par lui-même
+
+## 7 - UTM
+
+**Aujourd'hui**, les firewalls ne sont plus de simples vigiles. 
+Si le firewall est un super-héros, les "Firewalls **UTM**" (**<ins>Unified Threat Management</ins>** ou Gestion Unifiée des Menaces toujours en franchouillard) sont les Avengers. 🦸🏾‍♂️
+Ils intégrent tout un tas de fonctionnalité autre que le simple filtrage de connexion
+On peut y retrouver tout un tas de fonctionnalité tel que : 
+- **IDS** (Intrusion Detection System) : Le vigile ne va pas s'arreter au costard-cravate d'apparence. Il va désormais le **fouiller** et regarder tout ce qui peut paraitre louche. S'il trouve quelque chose il **alerte**
+- **IPS** (Intrusion Detection System), c’est le niveau supérieur. Le vigile a detecté le truc louche et nous a alerté. Désormais il a la capacité de **bloquer** directement toute menace détectée
+
+:::info
+Aujourd'hui, on dit directement "FireWall" par abus de langage. Ce que l'on veut dire par la généralement est "FireWall UTM StateFull"
+:::
+
+## 8 - Bonne pratique
+
+Si la connexion n'entre pas dans le critére de la premiére régle, le FireWall regarde si elle correspond avec la seconde, puis la troisiéme et ainsi de suite ...
+
+De fait, il y a deux philosophie de paramétrage : 
+- J'interdis petit a petit et j'**autorise** tout pour terminer
+- J'autorise ce dont j'ai besoin et j'**interdis** tout pour terminer
+
+Evidemment, la bonne pratique est la seconde philosophie.
+> **<ins>La derniére régle doit être de tout refuser</ins>**
+
+Dans un soucis de sécurité accrue, je ne dois autoriser que le strict minimum et donc l'essentiel. 
+
+**Trop de permission revient à transformer le vigile en simple portier.**
+
+Il faut donc analyser en profondeur le besoin et être le plus **"granulaire"** possible
+> **<ins>Autoriser le strict minimum</ins>**
+
+Au bout d'un moment, avec tout nos paramétrages, on se retrouve vite avec une trétra-chié de régles,
+Il est recommandé d'**en avoir le moins possible**. 
+
+L'**ANSSI** (Agence Nationale de la Sécurité des Systéme d'Information), recommande de ne pas en avoir plus de 100 
+> **<ins>Moins de 100 régles</ins>**
+
+Il est important de faire des **"groupes"** pour faciliter la gestion
+
+Par exemple j'ai trois serveurs qui ont besoin de la même régle qui est d'autoriser le https (443) en sortie
+
+Au lieu de créer trois régles, je n'ai qu'a créer un groupe "Serveurs" contenant les trois adresses de serveurs, et y autoriser le 443
+> **<ins>Les groupes permettent de paramétrer moins de régles</ins>**
+
+Les systémes informatique évoluent, il est important de maintenir le firewall à jour. Malheureusement, un firewall, devient vite le **bordel**. Surtout quand on mélange des adresses avec des groupes.
+
+Il vaut mieux penser à une **convention de nommage** simple et clair avec une jolie petite **description** expliquant pourquoi nous avons créer cette régle
+> **<ins>Convention de nommage</ins>**
+
+D'une évidence de type évidente, les menaces sont découvertes tous les jours, le firewall doit donc être **mis à jour** très très très très régulièrement
+
+### A - CheckList de bonne pratique
+- [ ] La dernière régle est un refus de tout ce qui n'est pas autorisé
+- [ ] Autorisation la plus strict possible
+- [ ] J'abuse des groupes de ports / d'hôtes et de DNS
+- [ ] Moins de 100 régles
+- [ ] Convention de nommage avec description
+- [ ] Mise à jour régulière
+
+## 9 - Conclusion
+
+Le firewall, c’est la **<ins>première ligne de défense</ins>** dans un réseau, de fait, c'est innévitablement **la plus importante !** 
+
+Son taff de **detection** et de **blocage** des grand méchant pas beau est simplement **indispensable**.
+
+Une fois que le cambrioleur est dans la maison, c'est déja trop tard. Il faut le bloquer en amont.
+> Un firewall bien configuré, c’est la premiere étape pour ne pas se faire cambrioler.
+
+---
+**_`Voici la liste des tutos disponibles :`_**
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

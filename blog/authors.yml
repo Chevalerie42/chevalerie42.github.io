@@ -1,0 +1,11 @@
+Chevalerie:
+  name: Chevalerie
+  title: SysAdmin - Créateur de contenu - Fondateur du site
+  url: https://github.com/Chevalerie42
+  image_url: /img/Page_Accueil/Logo_Chevalerie_Menu.png
+  email: chevalerie@keemail.me
+  page:
+    permalink: '/Chevalerie-Articles'
+  socials:
+    github: chevalerie42
+    newsletter: https://thisweekinreact.com

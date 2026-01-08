@@ -1,0 +1,23 @@
+---
+config:
+  theme: redux
+---
+flowchart TD
+ subgraph s1["Liste de régle"]
+        n3["_ CostardCravatte = Autorisé <br>_ SurvêtCasquetteBasket = Rejeter<br>"]
+  end
+    n2["Vigile"] <-- 2 --> n3
+    s1 -- 3  --> n4["Bienvenu !"]
+    n3 -- 3 --> n5["Retourne chez ta mére !"]
+    n6["Survêt-Casquette-Basket"] -- 1 --> n2
+    n7["Costard-Cravatte"] -- 1 --> n2
+    n3@{ shape: hex}
+    n2@{ icon: "azure:azure-firewall-manager", pos: "b"}
+    n4@{ icon: "fa:face-grin", pos: "b"}
+    n5@{ icon: "fa:face-frown", pos: "b"}
+    n6@{ icon: "fa:face-angry", pos: "b"}
+    n7@{ icon: "fa:face-grin-stars", pos: "b"}
+    style n4 stroke:#00C853
+    style n5 stroke:#D50000
+    style n6 stroke:#D50000
+    style n7 stroke:#00C853

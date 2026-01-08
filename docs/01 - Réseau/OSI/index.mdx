@@ -1,0 +1,62 @@
+---
+### Paramétrage de la page ###
+slug: Intro_OSI # le lien ici : https://XXXXX/docs/Intro_Tuto_de_Cheche
+tags: [Introduction, Réseau, OSI, TCP/IP] # Tags le fichier et permet de grouper par mots clef
+
+### FIL d'Ariane ###
+toc_min_heading_level: 2 # Fil d'Ariane, affiche dés le niveau de titre 2. Par Défaut : 2
+toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par défaut : 3
+
+### MetaData ###
+title: Le Modèle OSI # Titre du document
+keywords: [Intro, Tuto, Reseau, TCP/IP, LAN, WAN, Chevalerie, OSI, DOD] # Mots Clef
+description: Introduction au modèle OSI # La description du document
+image: https://chevalerie42.github.io/img/Page_Accueil/Photo_Réseau.jpg # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+
+### SideBar ###
+sidebar_label: Le Modèle OSI # Texte affiché sur la SideBar. Par défaut ce sera le "title"
+
+### Pagination ###
+pagination_label: Le Modèle OSI # Texte utilisé sur les boutons Suivant/Précédent. Par defaut "Title"
+pagination_next: Réseau/OSI/Couche Physique  # Pagination page suivante. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+pagination_prev: Réseau/index # Pagination page precedent. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+---
+
+## 1 - Introduction
+
+L'informatique, c'est compliqué. Ça va vite dans tous les sens. Afin de simplifier et favoriser la bonne compréhension de ce qui se passe où, des "cadres", "normes" ou encore "modèles" théorique ont été conçu. En vérité, c'est compliqué à définir simplement en une courte description, surtout pour des néophytes
+
+Bon... Si j'y mets mes propres mots : il y a 7 niveaux. Et ce qui se passe, au moment où ça se passe, se range bah ... ça se range à l'un de ces endroit. Bref cette echelle s'apelle "<ins>**Modéle OSI**</ins>"
+
+Avant d'aller plus loin, je tiens juste à prévenir qu'il existe un autre "modèle" que l'on utilise. C'est le même, mais avec 4 niveaux, donc un peu moins "précis" qui se nomme "<ins>**Modèle TCP/IP**</ins>" (également nommé **DoD** mais ça, c'est juste pour la confiture :p)
+
+## 2 - Tableau : modèle OSI
+
+Définition modèle OSI : Open Systems Interconnection
+
+|           N°       |  OSI          |    TCP/IP      | Définition grossiére     |
+| :----------------: | :----------:  | :------------: | :----------------------: |
+| <ins>**_7_**</ins> | Application   |   Application  |   Logiciels              |
+| <ins>**_6_**</ins> | Présentation  |   Application  |   Formatage & Compression|
+| <ins>**_5_**</ins> | Session       |   Application  |   Connexions             |
+| <ins>**_4_**</ins> | Transport     |   Transport    |   Mode de communication  |
+| <ins>**_3_**</ins> | Réseau        |   Réseau       |   Aresses IP et routage  |
+| <ins>**_2_**</ins> | Liaison de données |   Accès   |   Branchements câbles et cartes réseaux  |
+| <ins>**_1_**</ins> | Physique      |   Accès        |   Mtériels & Câbles      |
+
+Dur de s'en rappeler, pourtant, cela va vous sauver un paquet de fois. Donc un petit effort ! Il y a un moyen facile de s'en rappeler : 
+
+> Ah Petite Salope, Tu Recrache La Purée 
+
+Vous l'aurez compris, chaque lettre en majuscule représente la 1ere du modèle
+
+:::tip
+ Ah Petite Salope, Tu Recrache La Purée ! 
+:::
+
+
+**_`Voici la liste des tutos disponibles :`_**
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

@@ -1,0 +1,184 @@
+---
+### Paramétrage de la page ###
+slug: Theorie_conception_reseau # le lien ici : https://XXXXX/docs/Intro_Tuto_de_Cheche
+tags: [Introduction, Réseau, Théorie] # Tags le fichier et permet de grouper par mots clef
+
+### FIL d'Ariane ###
+toc_min_heading_level: 2 # Fil d'Ariane, affiche dés le niveau de titre 2. Par Défaut : 2
+toc_max_heading_level: 4 # Fil d'Ariane, affiche jusqu'au niveau de titre 4. Par défaut : 3
+
+### MetaData ###
+title: 1 - Théorie de conception réseau # Titre du document
+keywords: [Tuto, Reseau, TCP/IP, LAN, WAN, Chevalerie, Concevoir un reseau, Conception, réseau, infra, infrastructure] # Mots Clef
+description: Comment concevoir un réseau informatique # La description du document
+image: https://chevalerie42.github.io/img/Page_Accueil/Photo_Réseau.jpg # Image utilisé par les liens vers cette page. A 1ere vue il faut privilégier les liens externe
+
+### SideBar ###
+sidebar_label: 1 - Théorie de conception réseau # Texte affiché sur la SideBar. Par défaut ce sera le "title"
+
+### Pagination ###
+pagination_label: 1 - Théorie de conception réseau # Texte utilisé sur les boutons Suivant/Précédent. Par defaut "Title"
+pagination_next: Réseau/Concevoir un reseau/Schema_Reseau  # Pagination page suivante. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+pagination_prev: Réseau/Concevoir un reseau/index # Pagination page precedent. Soit "null" pour ne pas en ajotuer. Soit dossier/fichier (Réseau/Intro_Reseau)
+---
+## 1 - Lister tous les actifs - AKA l'inventaire
+La toute première étape consiste à recenser absolument tout ce qui se connecte au réseau, au sens le plus large possible.<br/>
+Cela inclut :
+- Les équipements réseau
+- Les utilisateurs (humains)
+- Les logiciels et services
+
+### A – Matériels
+Nous recensons tous les équipements physiques connectés au réseau<br/>
+Quelques exemple courants : 
+- Ordinateurs fixes
+- Ordinateurs portables
+- Serveurs
+- Switchs
+- Routeurs
+- Firewalls
+- Bornes Wi-Fi
+- Imprimantes réseau
+- Téléphones IP
+- Caméras IP
+- Badgeuses
+Pourquoi les lister précisément ?<br/>
+Chaque équipement :
+- Consomme une adresse IP
+- Génère du trafic
+- Peut représenter un risque de sécurité
+- A des besoins spécifiques (débit, priorité, disponibilité)
+
+### B – Humains
+Un réseau ne sert a rien s'il ne sert pas d'une façon ou d'une autres aux utilisateurs.<br/>
+On recense ici toute personne ayant accés au réseau informatique<br/>
+Petit tips, utilisez un organigramme de l’entreprise permet de visualiser :
+- Les services
+- Les rôles
+- Les niveaux de privilèges
+Exemples de groupes
+- Direction
+- Service informatique
+- Production
+- Support
+- Comptabilité
+
+/!\ il faut penser à toute personne extérieure qui utiliseras peut être nos infrastructures
+- Prestataire
+- Visiteurs (Wifi public par exemple)
+- Intervenant Extérieur
+
+Pourquoi les lister précisément ?<br/>
+Chaque utilisateurs :
+- Générera du trafic
+- Utiliseras des ressources physiques
+- Si oublié peut être le point de défaillance du réseau
+
+### C – Logiciels (Softs)
+Les logiciels sont souvent oubliés lors de la conception, alors qu’ils génèrent l’essentiel du trafic réseau<br/>
+C'est les logiciels qui vont gérer le contenu des message qui transiteront sur les équipements physiques pour aidé les entité humaines<br/>
+Exemples :
+- Active Directory
+- ERP (Sage, SAP, etc.)
+- Messagerie
+- Serveur de fichiers
+- Applications métiers
+- Sauvegardes
+- Accès Internet
+
+Chaque logiciel implique :
+- Des flux réseau
+- Des ports
+- Des exigences de sécurité
+
+## 2 - Diagramme des flux 
+Une fois l’ensemble des composants du système d’information identifiés (matériels, utilisateurs et logiciels), l’étape suivante consiste à analyser les communications entre ces composants.<br/>
+Cette analyse se matérialise sous la forme d’un diagramme des flux.<br/>
+Un diagramme des flux permet de répondre à une question essentielle :
+> Qui communique avec quoi, dans quel but et par quel moyen ?
+
+Il est important de distinguer deux notions complémentaires :
+- Flux métier :
+Ils décrivent les échanges du point de vue de l’activité de l’entreprise.<br/>
+Exemple : « Le service support accède à l’ERP pour traiter les demandes clients »
+- Flux réseau :
+Ils traduisent techniquement les flux métier.<br/>
+Exemple : « Le poste utilisateur communique avec le serveur ERP via le protocole TCP sur des ports spécifiques »<br/>
+Ces deux approches doivent être croisées afin de concevoir un réseau fonctionnel, sécurisé et cohérent.<br/>
+La matrice est la suivante :<br/>
+
+|    NOM         |  DESCRIPTION                                    |
+| :------------: | :---------------------------------------------: |
+|   TITRE        |   Accès a Sage                                  |
+|   SOURCE       |   Ordinateurs - Equipe Support                  |
+|   DESTINATION  |   Serveur hébergeant l’application Sage         |
+|   PROTOCOLES   |   HTTPS 443                                     |
+|   OBJECTIFS    |   Gestion comptable, administrative ou commerciale  |
+
+## 3 - Segmentation
+A partir de maintenant, nous savons exactement qui fait quoi et comment<br/>
+C'est justement le but de la "segmentation" qui consiste à séparer les usages dans un réseau dédié sous forme de VLAN et d'y ajouter nos groupes d'équipements<br/>
+Pour rappel un VLAN (Virtual LAN) est un réseau logique indépendant, même s’il utilise la même infrastructure physique<br/>
+Vous trouverez plus d'information sur le cours https://chevalerie42.github.io/docs/Réseau/OSI/Liaison_de_donnees <br/>
+Un réseau non segmenté est a-sécurisé et voit une propagation tr_s rapide des pannes se former
+
+J'ai précédemment dit qu'il n'y avait pas de "template" de réseau<br/>
+Mais il existe un modéle de réseau "classique" un "pattern" que je vous donne ici en guise d'exemple<br/>
+Que l'on soit d'accord, c'est un modéle simple, le B-A BA 
+
+|    VLAN       |  CONTIENT                                    |
+| :-----------: | :---------------------------------------------: |
+|   MANAGEMENT  |   - Equipements d'interconnexion <br/> - Serveurs <br/> - Accès administrateurs  uniquement                                      |
+|   BUREAUTIQUE |   Ordinateurs                 |
+|   TELEPHONIE  |   Téléphones IP               |
+|   IMPRIMANTE  |   Imprimantes                 |
+|   PUBLICATION |   Service publié sur internet |
+
+## 4 - Besoin particulier
+Chaque organisation a des besoins qui lui sont propres<br/>
+Il faut donc étdudier les cas spécifiques et prendre en compte les demandes et besoins<br/>
+Par exemple, bien que déconseillé, un réseau informatique peut acceuillir un VLAN pour des invités<br/>
+Il faut aussi étudier et prendre en compte la gourmandise en réseau et prévoir de la priorisation de flux (QOS sur de la téléphonie par exemple)
+
+## 5 - Redondance
+Pour garantir un réseau résilient aux pannes, il faut réduire au maximum les points de défaillance uniques<br/>
+Tout ce qui est critique doit être redondé, il y a pas vraiment d'autre choix<br/>
+Un exemple concrêt : Si vous ne possédez qu'une seule ligne internet. Le jour ou votre opérateur aura une panne, vous n'aurez plus internet.<br/>
+Pour éviter une perte de service, la seule solution est d'avoir une seconde ligne internet (pensez à prendre deux technologies différentes, type Fibre / Adsl / 4G ainsi que deux opérateurs distinct : Orange / SFR / Bouygues etc ...)<br/>
+Dans ce cas, si votre ligne internet A tombe, automatiquement la B prends le relais. C'est transparant et automatique, vos utilisateurs ne remarque même pas qu'un incident est en cours<br/>
+La redondance, peut concerner :
+- Accès Internet
+- Firewalls
+- Switchs cœur de réseau
+- Alimentation électrique (onduleurs)<br/>
+La redondance a un coût, mais elle est indispensable pour les services critiques
+
+## 6 - Bonne pratique
+Enfin, maintenant que nous avons compris les principes théoriques sur comment concevoir un réseau<br/>
+Prenez ces quelques conseils supplémentaires autour de 4 pilliers :
+- Sécurité
+
+Tout réseau informatique se doit d'être le plus sécurisé possible<br/>
+Il faut penser au principe du moindre privilège, n'accorder que le strict necessaire ... et encore<br/>
+L'avantage des VLANs est d'obligé toute communication inter réseau par le FireWall, prenez le temps de faire une matrice des flux avec un filtrage du tonerre<br/>
+Il existe une architecture "Bastion", son principe : pas d’accès direct aux équipements de management. Exemple : Vous avez une VM que vous administrer en SSH et qui diffuse un site web en 443. Le 22 ne sera accessible que d'un réseau quand le 443 d'una utre<br/>
+Prévoyez de la journalisation (logs) afin de procéder a des traitements ou pouvoir retracer ce qui s'est passé, et un level au dessus, vous pourrez ajouté un SIEM (Splunk par exemple) qui vous alerterea de toute bizarrerie<br/>
+Sauvegarder la sauvegarde des configurations de vos équipements. Nan mais vraiment. Les sauvegardes sont importantes. 
+- Simplicité
+
+Nous travaillons dans des domaines techniques extrêmement complexes. Plus quelques chose l'est, plus cela prend du temps d'intervention. Faite simple. Si vous saviez a quel point c'est un gain de temps et ca rajoute en sécurité. La simplicité c'est la clé<br/>
+Pensez à un nommage cohérent (VLAN, équipements, interfaces) rapide et facile à lire
+- Évolutivité
+
+Votre entreprise va changer au fur et a mesure, les besoins évoluer et les contraintes avec. Si vous n'avez pas pris en compte, vous pourrez vous trouver dans un cas ou vous devez tout casser pour tout refaire. Ohlala, l'horreur. Entre temps, energie, mécontentement et source d'erreur. Vous foncez droit dans le mur<br/>
+Exemple concrêt : Votre LAN bureautique est sur un réseau en 192.168.1.0/24. Oh pas de chance, vous avez 254 ordinateurs maitnenant. Ce réseau ne peut plus fonctionner. Vous êtes obligés soit d'avoir un second LAN Bureautique (bouuuuuh !) soit d'avoir de tout migrer en 172.16.1.0 (ouaiiiiis !). Dommage ... Si vous aviez déja tout construit en 172.16.1.0 vous auriez eu moins de soucis. Alors évidemment, on peut pas tout prévoir. J'entends. Mais ... Si on se donne la peine d'essayer, on peut déja en esquivé quelques une, et c'est toujours ca de pris. Un bon informaticien est un informaticien feignant =)<br/>
+- Tests
+
+Je vous recommande de mettre à l'épreuve votre infrastructure de temps en temps et ceux de façon planifié. Vous verrez les problêmes avant qu'ils arrivent et vous controlerez l'impact<br/>
+Tester les bascules HA (couper un FW et voir si l'autre prend le relais par exemple)<br/>
+Éteindre un switch et vérifier que les utilisateurs (autre que ceux du switch coupé) ne perdent pas leurs chemin<br/>
+Tester les Bandes Passante réguliérement et les connectivité
+- Documentation
+
+Si vous ne me connaissez pas, je fais partie de ceux pour qui la documentation c'est la clé de tous les problêmes. Vision éclairé apportant une plus grande sécurité. Une rapidité de lecture pour une intervention plus rapide et efficace. Et enfin, une grosse base de connaissance <br/>
+La documentation à avoir et à maintenir est un simple schéma réseau<br/>

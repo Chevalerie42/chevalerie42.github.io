@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ⚔️ **Chevalerie42** ⚔️
 
 💻 Sysadmin Français 💻 
@@ -9,16 +8,17 @@
 > 
 > Ni bon 👼, ni mauvais 😈
 
->Le partage engendre la connaissance qui engendre le surpassement de soi ! 
+> Le partage engendre la connaissance qui engendre le surpassement de soi ! 
 
 ## **Contact :**
 
 - ✉️ [chevalerie@keemail.me](mailto:chevalerie@keemail.me)
-- 🌐 [Site](https://chevalerie42.github.io/
+- 🌐 [Site](https://chevalerie42.github.io/)
 - ☁️ [TryHackMe](https://tryhackme.com/p/Chevalerie) 
 - 🧊 [HackTheBox](https://app.hackthebox.com/profile/390130)
 - 😸 [GitHub](https://github.com/Chevalerie42/)
 - ▶️ [Youtube](https://www.youtube.com/channel/UCl-oB2xW0ec2Vy0YScAPBIg)
+
 =======
 # Website
 
@@ -65,4 +65,4 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ---
 
 ## **CHEVALERIE**
->>>>>>> ea56250 (TEST_TCDOME)
+

@@ -53,36 +53,62 @@ function TEST_TCDOME() {
       </head>
 
 
-        <div className={clsx('row','text--center','padding-left--md','padding-right--md','row--no-gutters','padding-bottom--none','margin-bottom-none')}
-        >
-          <div class="col">
-            
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/mOiKQF-6_ok" title="CAM1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-           
-          </div>
-
-          <div class="col">
-            <div class="col-demo">
-              <br />
-                <h1 
-                  className="hero__title">{siteConfig.title}
-                </h1>
-                <p className="hero__subtitle">
-                  {siteConfig.tagline}
-                </p>
-                <img
-                width="40%"
-                height="40%"
-                alt={siteConfig.title}
-                className={clsx(styles.heroBannerLogo,)}
-                src={useBaseUrl('img/Page_Accueil/Logo_Cyber-Xplorer2.svg')}
-              />
 
 
-            </div>
-          </div>
+<div className="container">
+  <div
+    className="row row--no-gutters"
+    style={{
+      display: "flex",
+      alignItems: "stretch",
+      height: "100%", // <<< Ajuste ici si tu veux plus ou moins haut
+      width: "100%",
+    }}
+  >
+    {/* COLONNE GAUCHE */}
+    <div className="col" style={{ padding: 0 }}>
+      <div style={{ width: "100%", height: "100%", position: "relative" }}>
+        <iframe
+          src="https://www.youtube.com/embed/mOiKQF-6_ok"
+          title="CAM1"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%", // <<< FULL HEIGHT DE LA COLONNE
+          }}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+    </div>
 
-        </div>
+    {/* COLONNE DROITE */}
+    <div
+      className="col"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center", // centrer verticalement
+        alignItems: "center",
+        padding: "1rem",
+      }}
+    >
+      <h1 className="hero__title">{siteConfig.title}</h1>
+      <p className="hero__subtitle">{siteConfig.tagline}</p>
+
+      <img
+        width="40%"
+        alt={siteConfig.title}
+        src={useBaseUrl('img/Page_Accueil/Logo_Cyber-Xplorer2.svg')}
+      />
+    </div>
+
+  </div>
+</div>
+
 
 
         
